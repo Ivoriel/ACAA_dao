@@ -8,4 +8,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ClientRepositoryMock implements ClientRepository {
+
+    @Override
+    public ClientDao getClient(long id) {
+        return null;
+    }
+
 }

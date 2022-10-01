@@ -7,5 +7,5 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class CompanyRepositoryMock {
+public class CompanyRepositoryMock implements CompanyRepository{
 }

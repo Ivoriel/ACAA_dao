@@ -8,4 +8,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CompanyRepositoryMock implements CompanyRepository{
+
+    @Override
+    public CompanyDao getCompany(long id) {
+        return null;
+    }
+
 }

@@ -5,7 +5,7 @@ import pl.kosinski.acaa_model.Client.Client;
 
 public class CompanyDao {
 
-    private long id;
+    private final long id;
     private String name;
     private Client client;
     private Address address;

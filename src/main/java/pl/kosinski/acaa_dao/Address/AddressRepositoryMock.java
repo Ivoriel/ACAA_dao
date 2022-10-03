@@ -60,7 +60,41 @@ public class AddressRepositoryMock implements AddressRepository{
         return sb.toString();
     }
 
+    private String generateStreet() {
+        String[] streets = {"Prosta", "Szeroka", "Długa", "Mickiewicza", "Slowackiego", "Solidarności", "Grodzka",
+                            "Bohaterów Mariupola", "Wiśniowa", "Kochanowskiego", "Leśna"};
+        return streets[generateRandomInt(0,9)];
+    }
 
+    private String generateBuildingNumber() {
+        StringBuilder sb = new StringBuilder();
+        int buildingNumber = generateRandomInt(1, 115);
+        sb.append(buildingNumber);
+        if (buildingNumber % 4 == 0 || buildingNumber % 7 == 0) {
+            sb.append("A");
+            return sb.toString();
+        }
+        if (buildingNumber % 9 == 0) {
+            sb.append("B");
+            return sb.toString();
+        }
+        return sb.toString();
+    }
+
+    private String generateAdditionalIdentifier() {
+        StringBuilder sb = new StringBuilder();
+        int additionalIdentifier = generateRandomInt(1, 156);
+        sb.append(additionalIdentifier);
+        if (additionalIdentifier % 7 == 0) {
+            sb.append("Piętro 1");
+            return sb.toString();
+        }
+        if (additionalIdentifier % 9 == 0) {
+            sb.append("Piętro 3");
+            return sb.toString();
+        }
+        return sb.toString();
+    }
 
     private int generateRandomInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max +1);

@@ -43,6 +43,25 @@ public class AddressRepositoryMock implements AddressRepository{
         return municipalities[generateRandomInt(0, municipalities.length - 1)];
     }
 
+    private String generateRegion() {
+        String[] regions = {"Kujawsko-Pomorskie", "Mazowieckie", "Śląskie"};
+        return regions[generateRandomInt(0, regions.length - 1)];
+    }
+
+    private String generateZipCode() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 6; i++) {
+            if (i == 2) {
+                sb.append("-");
+            } else {
+                sb.append(generateRandomInt(0, 9));
+            }
+        }
+        return sb.toString();
+    }
+
+
+
     private int generateRandomInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max +1);
     }

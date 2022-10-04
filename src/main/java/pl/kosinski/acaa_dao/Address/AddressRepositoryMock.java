@@ -20,6 +20,11 @@ public class AddressRepositoryMock implements AddressRepository{
         populateAddressDb();
     }
 
+    @Override
+    public AddressDao getAddress(long id) {
+        return (AddressDao) AddressDb.get(id);
+    }
+
     private void populateAddressDb(){
         for (long i = 1; i < 10; i++) {
             generateAddress(i);
@@ -97,5 +102,6 @@ public class AddressRepositoryMock implements AddressRepository{
     private int generateRandomInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max +1);
     }
+
 
 }

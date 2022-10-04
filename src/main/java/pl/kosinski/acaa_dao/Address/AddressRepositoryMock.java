@@ -27,9 +27,8 @@ public class AddressRepositoryMock implements AddressRepository{
     }
 
     private AddressDao generateAddress(long id) {
-        AddressDao dao = new AddressDao(id, generateCountry(), generateMunicipality(), generateRegion(), generateZipCode(),
+        return new AddressDao(id, generateCountry(), generateMunicipality(), generateRegion(), generateZipCode(),
                 generateStreet(), generateBuildingNumber(), generateAdditionalIdentifier());
-        return dao;
     }
 
     private String generateCountry() {

@@ -4,4 +4,6 @@ public interface AddressRepository {
 
     AddressDao getAddress(long id);
 
+    void deleteAddress(long id);
+
 }

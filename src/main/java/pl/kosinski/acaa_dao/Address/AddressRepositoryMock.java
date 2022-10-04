@@ -25,6 +25,11 @@ public class AddressRepositoryMock implements AddressRepository{
         return (AddressDao) AddressDb.get(id);
     }
 
+    @Override
+    public void deleteAddress(long id) {
+        AddressDb.remove(id);
+    }
+
     private void populateAddressDb(){
         for (long i = 1; i < 10; i++) {
             generateAddress(i);

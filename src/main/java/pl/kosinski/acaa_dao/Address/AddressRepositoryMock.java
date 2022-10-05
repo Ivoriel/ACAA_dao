@@ -21,6 +21,11 @@ public class AddressRepositoryMock implements AddressRepository{
     }
 
     @Override
+    public AddressDao saveAddress(AddressDao addressDao) {
+        return null;
+    }
+
+    @Override
     public AddressDao getAddress(long id) {
         return (AddressDao) AddressDb.get(id);
     }

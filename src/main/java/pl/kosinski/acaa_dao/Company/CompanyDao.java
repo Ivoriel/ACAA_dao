@@ -17,4 +17,19 @@ public class CompanyDao {
         this.address = address;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
 }

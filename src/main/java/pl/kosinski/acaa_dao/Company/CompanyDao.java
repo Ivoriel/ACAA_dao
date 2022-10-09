@@ -8,13 +8,13 @@ public class CompanyDao {
     private final long id;
     private String name;
     private Client client;
-    private Address address;
+    private long addressId;
 
-    CompanyDao(long id, String name, Client client, Address address) {
+    CompanyDao(long id, String name, Client client, long addressId) {
         this.id = id;
         this.name = name;
         this.client = client;
-        this.address = address;
+        this.addressId = addressId;
     }
 
     public long getId() {
@@ -29,7 +29,7 @@ public class CompanyDao {
         return client;
     }
 
-    public Address getAddress() {
-        return address;
+    public long getAddressId() {
+        return addressId;
     }
 }

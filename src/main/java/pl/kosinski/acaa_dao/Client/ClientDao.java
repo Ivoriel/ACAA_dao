@@ -6,12 +6,12 @@ public class ClientDao {
 
     private final long id;
     private String name;
-    private Address address;
+    private long addressId;
 
-    ClientDao (long id, String name, Address address) {
+    ClientDao (long id, String name, long addressId) {
         this.id = id;
         this.name = name;
-        this.address = address;
+        this.addressId = addressId;
     }
 
     public long getId() {
@@ -22,7 +22,7 @@ public class ClientDao {
         return name;
     }
 
-    public Address getAddress() {
-        return address;
+    public long getAddressId() {
+        return addressId;
     }
 }

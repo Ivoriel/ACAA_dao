@@ -25,13 +25,13 @@ public class CompanyRepositoryMock implements CompanyRepository{
     }
 
     private void populateCompanyDb() {
-        for (long i = 0; i < 9; i++) {
+        for (long i = 1; i < 10; i++) {
             CompanyDb.put(i, generateCompany(i));
         }
     }
 
     private CompanyDao generateCompany(long id) {
-        CompanyDao dao = new CompanyDao();
+        CompanyDao dao = new CompanyDao(id, generateCompanyName(), getClient(id), generateAddress(id));
         return dao;
     }
 

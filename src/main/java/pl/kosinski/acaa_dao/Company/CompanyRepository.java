@@ -4,4 +4,6 @@ public interface CompanyRepository {
 
     CompanyDao getCompany(long id);
 
+    void deleteCompany(long id);
+
 }

@@ -24,6 +24,11 @@ public class CompanyRepositoryMock implements CompanyRepository{
         return null;
     }
 
+    @Override
+    public void deleteCompany(long id) {
+
+    }
+
     private void populateCompanyDb() {
         for (long i = 1; i < 10; i++) {
             CompanyDb.put(i, generateCompany(i));

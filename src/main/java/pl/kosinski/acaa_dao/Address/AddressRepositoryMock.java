@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -26,8 +27,8 @@ public class AddressRepositoryMock implements AddressRepository{
     }
 
     @Override
-    public AddressDao getAddress(long id) {
-        return (AddressDao) AddressDb.get(id);
+    public Optional<AddressDao> getAddress(long id) {
+        return Optional.of((AddressDao) AddressDb.get(id));
     }
 
     @Override

@@ -20,6 +20,11 @@ public class CompanyRepositoryMock implements CompanyRepository{
     }
 
     @Override
+    public CompanyDao saveCompany(CompanyDao companyDao) {
+        return null;
+    }
+
+    @Override
     public CompanyDao getCompany(long id) {
         return null;
     }

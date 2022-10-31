@@ -36,6 +36,11 @@ public class AddressRepositoryMock implements AddressRepository{
         AddressDb.remove(id);
     }
 
+    @Override
+    public int size() {
+        return AddressDb.size();
+    }
+
     private void populateAddressDb(){
         for (long i = 1; i < 10; i++) {
             generateAddress(i);

@@ -10,4 +10,6 @@ public interface AddressRepository {
 
     void deleteAddress(long id);
 
+    int size();
+
 }

@@ -23,7 +23,11 @@ public class AddressRepositoryMock implements AddressRepository{
 
     @Override
     public AddressDao saveAddress(AddressDao addressDao) {
-        return null;
+        AddressDao addressToSave = new AddressDao(addressDao.getId(), addressDao.getCountry(),
+                addressDao.getMunicipality(), addressDao.getRegion(), addressDao.getZipCode(), addressDao.getStreet(),
+                addressDao.getBuildingNumber(), addressDao.getAdditionalIdentifier());
+        AddressDb.put(addressToSave.getId(), addressToSave);
+        return addressToSave;
     }
 
     @Override

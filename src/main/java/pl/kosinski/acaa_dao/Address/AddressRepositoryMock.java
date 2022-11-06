@@ -1,6 +1,7 @@
 package pl.kosinski.acaa_dao.Address;
 
 import org.springframework.stereotype.Component;
+import pl.kosinski.acaa_dto.AddressDto;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -23,11 +24,8 @@ public class AddressRepositoryMock implements AddressRepository{
 
     @Override
     public AddressDao saveAddress(AddressDao addressDao) {
-        AddressDao addressToSave = new AddressDao(addressDao.getId(), addressDao.getCountry(),
-                addressDao.getMunicipality(), addressDao.getRegion(), addressDao.getZipCode(), addressDao.getStreet(),
-                addressDao.getBuildingNumber(), addressDao.getAdditionalIdentifier());
-        AddressDb.put(addressToSave.getId(), addressToSave);
-        return addressToSave;
+        AddressDb.put(addressDao.getId(), addressDao);
+        return addressDao;
     }
 
     @Override
@@ -47,11 +45,23 @@ public class AddressRepositoryMock implements AddressRepository{
 
     private void populateAddressDb(){
         for (long i = 1; i < 10; i++) {
-            generateAddress(i);
+            saveAddress(generate(i));
         }
     }
 
-    private AddressDao generateAddress(long id) {
+    public AddressDto generate() {
+        AddressDto generated = new AddressDto();
+        generated.setCountry(generateCountry());
+        generated.setMunicipality(generateMunicipality());
+        generated.setRegion(generateRegion());
+        generated.setZipCode(generateZipCode());
+        generated.setStreet(generateStreet());
+        generated.setBuildingNumber(generateBuildingNumber());
+        generated.setAdditionalIdentifier(generateAdditionalIdentifier());
+        return generated;
+    }
+
+    private AddressDao generate(long id) {
         return new AddressDao(id, generateCountry(), generateMunicipality(), generateRegion(), generateZipCode(),
                 generateStreet(), generateBuildingNumber(), generateAdditionalIdentifier());
     }

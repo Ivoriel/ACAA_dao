@@ -1,6 +1,8 @@
 package pl.kosinski.acaa_dao.Client;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+import pl.kosinski.acaa_dao.Address.AddressRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -11,7 +13,10 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 
 @Component
+@AllArgsConstructor
 public class ClientRepositoryMock implements ClientRepository {
+
+    AddressRepository addressRepository;
 
     HashMap ClientDb;
 
@@ -37,7 +42,7 @@ public class ClientRepositoryMock implements ClientRepository {
     }
 
     private ClientDao generateClient(long id) {
-        ClientDao dao = new ClientDao(id, generateName(), generateAddress());
+        ClientDao dao = new ClientDao(id, generateName(), generateAddressId());
         return dao;
     }
 
@@ -53,6 +58,10 @@ public class ClientRepositoryMock implements ClientRepository {
         name.append(lastNames[generateRandomInt(0, lastNames.length - 1)]);
 
         return name.toString();
+    }
+
+    private int generateAddressId() {
+        return generateRandomInt(0, addressRepository.size() - 1);
     }
 
     private int generateRandomInt(int min, int max) {

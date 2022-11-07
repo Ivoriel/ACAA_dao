@@ -26,12 +26,12 @@ public class ClientRepositoryMock implements ClientRepository {
     }
 
     @Override
-    public ClientDao saveClient(ClientDao clientDao) {
+    public ClientDao save(ClientDao clientDao) {
         return null;
     }
 
     @Override
-    public ClientDao getClient(long id) {
+    public ClientDao get(long id) {
         return null;
     }
 

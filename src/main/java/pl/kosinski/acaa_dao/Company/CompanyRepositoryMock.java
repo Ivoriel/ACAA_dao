@@ -20,17 +20,17 @@ public class CompanyRepositoryMock implements CompanyRepository{
     }
 
     @Override
-    public CompanyDao saveCompany(CompanyDao companyDao) {
+    public CompanyDao save(CompanyDao companyDao) {
         return null;
     }
 
     @Override
-    public CompanyDao getCompany(long id) {
+    public CompanyDao get(long id) {
         return null;
     }
 
     @Override
-    public void deleteCompany(long id) {
+    public void delete(long id) {
 
     }
 

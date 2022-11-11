@@ -6,11 +6,11 @@ import java.util.Optional;
 
 public interface AddressRepository {
 
-    AddressDao saveAddress(AddressDao addressDao);
+    AddressDao save(AddressDao addressDao);
 
-    Optional<AddressDao> getAddress(long id);
+    Optional<AddressDao> get(long id);
 
-    void deleteAddress(long id);
+    void delete(long id);
 
     int size();
 

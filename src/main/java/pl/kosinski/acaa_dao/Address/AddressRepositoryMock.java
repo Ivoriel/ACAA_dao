@@ -1,5 +1,6 @@
 package pl.kosinski.acaa_dao.Address;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import pl.kosinski.acaa_dto.AddressDto;
 
@@ -13,6 +14,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 
 @Component
+@AllArgsConstructor
 public class AddressRepositoryMock implements AddressRepository{
 
     HashMap AddressDb;
@@ -23,18 +25,18 @@ public class AddressRepositoryMock implements AddressRepository{
     }
 
     @Override
-    public AddressDao saveAddress(AddressDao addressDao) {
+    public AddressDao save(AddressDao addressDao) {
         AddressDb.put(addressDao.getId(), addressDao);
         return addressDao;
     }
 
     @Override
-    public Optional<AddressDao> getAddress(long id) {
+    public Optional<AddressDao> get(long id) {
         return Optional.of((AddressDao) AddressDb.get(id));
     }
 
     @Override
-    public void deleteAddress(long id) {
+    public void delete(long id) {
         AddressDb.remove(id);
     }
 
@@ -45,7 +47,7 @@ public class AddressRepositoryMock implements AddressRepository{
 
     private void populateAddressDb(){
         for (long i = 1; i < 10; i++) {
-            saveAddress(generate(i));
+            save(generate(i));
         }
     }
 
@@ -132,6 +134,5 @@ public class AddressRepositoryMock implements AddressRepository{
     private int generateRandomInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max +1);
     }
-
 
 }

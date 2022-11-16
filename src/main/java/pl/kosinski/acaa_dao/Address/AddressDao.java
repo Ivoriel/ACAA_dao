@@ -11,7 +11,7 @@ public class AddressDao {
     private String buildingNumber;
     private String additionalIdentifier;
 
-    AddressDao(long id, String country, String municipality, String region, String zipCode, String street,
+    public AddressDao(long id, String country, String municipality, String region, String zipCode, String street,
                String buildingNumber, String additionalIdentifier) {
         this.id = id;
         this.country = country;
@@ -21,6 +21,18 @@ public class AddressDao {
         this.street = street;
         this.buildingNumber = buildingNumber;
         this.additionalIdentifier = additionalIdentifier;
+    }
+
+    public AddressDao edit(String country, String municipality, String region, String zipCode, String street,
+                     String buildingNumber, String additionalIdentifier) {
+        this.country = country;
+        this.municipality = municipality;
+        this.region = region;
+        this.zipCode = zipCode;
+        this.street = street;
+        this.buildingNumber = buildingNumber;
+        this.additionalIdentifier = additionalIdentifier;
+        return this;
     }
 
     public long getId() {

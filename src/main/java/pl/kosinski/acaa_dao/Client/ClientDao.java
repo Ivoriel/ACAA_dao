@@ -8,8 +8,13 @@ public class ClientDao {
     private String name;
     private long addressId;
 
-    ClientDao (long id, String name, long addressId) {
+    public ClientDao (long id, String name, long addressId) {
         this.id = id;
+        this.name = name;
+        this.addressId = addressId;
+    }
+
+    public ClientDao edit(String name, long addressId) {
         this.name = name;
         this.addressId = addressId;
     }

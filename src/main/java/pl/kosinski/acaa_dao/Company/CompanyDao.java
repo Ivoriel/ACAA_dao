@@ -7,15 +7,17 @@ public class CompanyDao {
 
     private final long id;
     private String name;
-    private Client client;
+    private long clientId;
     private long addressId;
 
-    CompanyDao(long id, String name, Client client, long addressId) {
+    public CompanyDao(long id, String name, long clientId, long addressId) {
         this.id = id;
         this.name = name;
-        this.client = client;
+        this.clientId = clientId;
         this.addressId = addressId;
     }
+
+    public CompanyDao edit(String name, long clientId, long addressId)
 
     public long getId() {
         return id;
@@ -25,8 +27,8 @@ public class CompanyDao {
         return name;
     }
 
-    public Client getClient() {
-        return client;
+    public long getClient() {
+        return clientId;
     }
 
     public long getAddressId() {

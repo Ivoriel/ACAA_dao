@@ -17,7 +17,12 @@ public class CompanyDao {
         this.addressId = addressId;
     }
 
-    public CompanyDao edit(String name, long clientId, long addressId)
+    public CompanyDao edit(String name, long clientId, long addressId) {
+        this.name = name;
+        this.clientId = clientId;
+        this.addressId = addressId;
+        return this;
+    }
 
     public long getId() {
         return id;

@@ -17,6 +17,7 @@ public class ClientDao {
     public ClientDao edit(String name, long addressId) {
         this.name = name;
         this.addressId = addressId;
+        return this;
     }
 
     public long getId() {

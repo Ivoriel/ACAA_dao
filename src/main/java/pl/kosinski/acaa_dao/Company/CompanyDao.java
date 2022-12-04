@@ -1,9 +1,10 @@
 package pl.kosinski.acaa_dao.Company;
 
+import pl.kosinski.acaa_dao.Common.BaseDao;
 import pl.kosinski.acaa_model.Address.Address;
 import pl.kosinski.acaa_model.Client.Client;
 
-public class CompanyDao {
+public class CompanyDao extends BaseDao {
 
     private final long id;
     private String name;

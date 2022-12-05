@@ -1,6 +1,8 @@
 package pl.kosinski.acaa_dao.Address;
 
-public class AddressDao {
+import pl.kosinski.acaa_dao.Common.BaseDao;
+
+public class AddressDao extends BaseDao {
     
     private final long id;
     private String country;

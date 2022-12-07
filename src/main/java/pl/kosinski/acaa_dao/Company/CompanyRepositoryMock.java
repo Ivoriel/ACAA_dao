@@ -1,6 +1,8 @@
 package pl.kosinski.acaa_dao.Company;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+import pl.kosinski.acaa_dao.Address.AddressRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -10,9 +12,12 @@ import java.util.HashMap;
  */
 
 @Component
+@AllArgsConstructor
 public class CompanyRepositoryMock implements CompanyRepository{
 
     HashMap CompanyDb;
+
+    AddressRepository addressRepository;
 
     @PostConstruct
     public void init() {
@@ -41,7 +46,7 @@ public class CompanyRepositoryMock implements CompanyRepository{
     }
 
     private CompanyDao generateCompany(long id) {
-        CompanyDao dao = new CompanyDao(id, generateCompanyName(), getClient(id), generateAddress(id));
+        CompanyDao dao = new CompanyDao(id, generateCompanyName(), getClient(id), addressRepository.generate());
         return dao;
     }
 

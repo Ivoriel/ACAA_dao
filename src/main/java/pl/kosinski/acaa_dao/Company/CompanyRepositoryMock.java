@@ -3,6 +3,7 @@ package pl.kosinski.acaa_dao.Company;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import pl.kosinski.acaa_dao.Address.AddressRepository;
+import pl.kosinski.acaa_dao.Client.ClientRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -16,8 +17,9 @@ import java.util.HashMap;
 public class CompanyRepositoryMock implements CompanyRepository{
 
     HashMap CompanyDb;
-
     AddressRepository addressRepository;
+    ClientRepository clientRepository;
+
 
     @PostConstruct
     public void init() {
@@ -46,7 +48,7 @@ public class CompanyRepositoryMock implements CompanyRepository{
     }
 
     private CompanyDao generateCompany(long id) {
-        CompanyDao dao = new CompanyDao(id, generateCompanyName(), getClient(id), addressRepository.generate());
+        CompanyDao dao = new CompanyDao(id, generateCompanyName(), clientRepository.generate(), addressRepository.generate());
         return dao;
     }
 

@@ -41,6 +41,10 @@ public class ClientRepositoryMock implements ClientRepository {
         }
     }
 
+    public ClientDao generate() {
+        return generateClient(ClientDb.size());
+    }
+
     private ClientDao generateClient(long id) {
         ClientDao dao = new ClientDao(id, generateName(), generateAddressId());
         return dao;

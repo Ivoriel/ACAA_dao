@@ -6,4 +6,6 @@ public interface ClientRepository {
 
     ClientDao get(long id);
 
+    ClientDao generate();
+
 }

@@ -7,6 +7,7 @@ import pl.kosinski.acaa_dao.Client.ClientRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * The purpose of this class is to operate as a mock db during development.
@@ -50,6 +51,14 @@ public class CompanyRepositoryMock implements CompanyRepository{
     private CompanyDao generateCompany(long id) {
         CompanyDao dao = new CompanyDao(id, generateCompanyName(), clientRepository.generate(), addressRepository.generate());
         return dao;
+    }
+
+    private String generateCompanyName() {
+
+    }
+
+    private int generateRandomInt(int min, int max) {
+        return ThreadLocalRandom.current().nextInt(min, max +1);
     }
 
 }

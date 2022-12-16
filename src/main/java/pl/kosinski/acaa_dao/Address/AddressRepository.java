@@ -1,10 +1,11 @@
 package pl.kosinski.acaa_dao.Address;
 
+import pl.kosinski.acaa_dao.Common.BaseRepository;
 import pl.kosinski.acaa_dto.AddressDto;
 
 import java.util.Optional;
 
-public interface AddressRepository {
+public interface AddressRepository extends BaseRepository {
 
     AddressDao save(AddressDao addressDao);
 

@@ -1,6 +1,8 @@
 package pl.kosinski.acaa_dao.Client;
 
-public interface ClientRepository {
+import pl.kosinski.acaa_dao.Common.BaseRepository;
+
+public interface ClientRepository extends BaseRepository {
 
     ClientDao save(ClientDao clientDao);
 

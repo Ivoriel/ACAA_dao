@@ -1,6 +1,8 @@
 package pl.kosinski.acaa_dao.Company;
 
-public interface CompanyRepository {
+import pl.kosinski.acaa_dao.Common.BaseRepository;
+
+public interface CompanyRepository extends BaseRepository {
 
     CompanyDao save(CompanyDao companyDao);
 

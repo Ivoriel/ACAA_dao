@@ -27,7 +27,8 @@ public class ClientRepositoryMock implements ClientRepository {
 
     @Override
     public ClientDao save(ClientDao clientDao) {
-        return null;
+        ClientDb.put(clientDao.getId(), clientDao);
+        return clientDao;
     }
 
     @Override

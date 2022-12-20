@@ -6,6 +6,7 @@ import pl.kosinski.acaa_dao.Address.AddressRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -33,7 +34,7 @@ public class ClientRepositoryMock implements ClientRepository {
 
     @Override
     public ClientDao get(long id) {
-        return null;
+        return Optional.of((ClientDao) ClientDb.get(id));
     }
 
     private void populateClientDb() {

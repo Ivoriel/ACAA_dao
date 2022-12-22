@@ -29,7 +29,8 @@ public class CompanyRepositoryMock implements CompanyRepository{
 
     @Override
     public CompanyDao save(CompanyDao companyDao) {
-        return null;
+        CompanyDb.put(companyDao.getId(), companyDao);
+        return companyDao;
     }
 
     @Override

@@ -7,6 +7,7 @@ import pl.kosinski.acaa_dao.Client.ClientRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -34,8 +35,8 @@ public class CompanyRepositoryMock implements CompanyRepository{
     }
 
     @Override
-    public CompanyDao get(long id) {
-        return null;
+    public Optional<CompanyDao> get(long id) {
+        return Optional.ofNullable((CompanyDao) CompanyDb.get(id));
     }
 
     @Override

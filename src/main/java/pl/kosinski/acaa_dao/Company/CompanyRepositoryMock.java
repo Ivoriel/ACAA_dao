@@ -41,7 +41,7 @@ public class CompanyRepositoryMock implements CompanyRepository{
 
     @Override
     public void delete(long id) {
-
+        CompanyDb.remove(id);
     }
 
     private void populateCompanyDb() {

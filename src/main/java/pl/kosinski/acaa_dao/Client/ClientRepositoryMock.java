@@ -37,6 +37,11 @@ public class ClientRepositoryMock implements ClientRepository {
         return Optional.of((ClientDao) ClientDb.get(id));
     }
 
+    @Override
+    public void delete(long id) {
+        ClientDb.remove(id);
+    }
+
     private void populateClientDb() {
         for (long i = 1; i < 10; i++) {
             generateClient(i);

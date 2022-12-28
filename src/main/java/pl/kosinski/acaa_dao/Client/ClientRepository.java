@@ -10,6 +10,8 @@ public interface ClientRepository extends BaseRepository {
 
     Optional<ClientDao> get(long id);
 
+    void delete(long id);
+
     ClientDao generate();
 
 }

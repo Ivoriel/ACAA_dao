@@ -42,6 +42,11 @@ public class ClientRepositoryMock implements ClientRepository {
         ClientDb.remove(id);
     }
 
+    @Override
+    public int size() {
+        return ClientDb.size();
+    }
+
     private void populateClientDb() {
         for (long i = 1; i < 10; i++) {
             generateClient(i);

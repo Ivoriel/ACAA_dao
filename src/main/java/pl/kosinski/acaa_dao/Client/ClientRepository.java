@@ -12,6 +12,8 @@ public interface ClientRepository extends BaseRepository {
 
     void delete(long id);
 
+    int size();
+
     ClientDao generate();
 
 }

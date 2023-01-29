@@ -12,4 +12,5 @@ public interface CompanyRepository extends BaseRepository {
 
     void delete(long id);
 
+    int size();
 }

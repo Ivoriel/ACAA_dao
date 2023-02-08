@@ -31,7 +31,7 @@ public class CompanyDao extends BaseDao {
         return name;
     }
 
-    public long getClient() {
+    public long getClientId() {
         return clientId;
     }
 

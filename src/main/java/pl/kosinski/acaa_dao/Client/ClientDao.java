@@ -8,7 +8,7 @@ public class ClientDao extends BaseDao {
     private String name;
     private long addressId;
 
-    public ClientDao (long id, String name, long addressId) {
+    public ClientDao(long id, String name, long addressId) {
         this.id = id;
         this.name = name;
         this.addressId = addressId;

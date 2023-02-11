@@ -37,7 +37,7 @@ public class AddressDao extends BaseDao {
         return this;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

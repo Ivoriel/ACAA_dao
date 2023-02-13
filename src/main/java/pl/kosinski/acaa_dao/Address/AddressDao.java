@@ -4,7 +4,7 @@ import pl.kosinski.acaa_dao.Common.BaseDao;
 
 public class AddressDao extends BaseDao {
     
-    private final long id;
+    private final Long id;
     private String country;
     private String municipality;
     private String region;

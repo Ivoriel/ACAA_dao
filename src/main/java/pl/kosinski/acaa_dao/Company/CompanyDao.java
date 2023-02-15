@@ -23,7 +23,7 @@ public class CompanyDao extends BaseDao {
         return this;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
